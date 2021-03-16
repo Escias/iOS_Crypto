@@ -15,6 +15,7 @@
 		6E404A752600F69500178067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E404A732600F69500178067 /* LaunchScreen.storyboard */; };
 		6E404A802600F69600178067 /* iOS_CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404A7F2600F69600178067 /* iOS_CryptoTests.swift */; };
 		6E404A8B2600F69600178067 /* iOS_CryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404A8A2600F69600178067 /* iOS_CryptoUITests.swift */; };
+		6E404A992600F7B600178067 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6E404A982600F7B600178067 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6E404A862600F69600178067 /* iOS_CryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_CryptoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E404A8A2600F69600178067 /* iOS_CryptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_CryptoUITests.swift; sourceTree = "<group>"; };
 		6E404A8C2600F69600178067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E404A982600F7B600178067 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		6E404A5C2600F69400178067 = {
 			isa = PBXGroup;
 			children = (
+				6E404A982600F7B600178067 /* .gitignore */,
 				6E404A672600F69400178067 /* iOS_Crypto */,
 				6E404A7E2600F69600178067 /* iOS_CryptoTests */,
 				6E404A892600F69600178067 /* iOS_CryptoUITests */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E404A992600F7B600178067 /* .gitignore in Resources */,
 				6E404A752600F69500178067 /* LaunchScreen.storyboard in Resources */,
 				6E404A722600F69500178067 /* Assets.xcassets in Resources */,
 				6E404A702600F69400178067 /* Main.storyboard in Resources */,
