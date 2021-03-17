@@ -17,21 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efN-LE-vKS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="coinCell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="efN-LE-vKS">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="coinCell" rowHeight="100" id="JAY-F8-Y3z">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JAY-F8-Y3z" id="kUn-zd-u9I">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyE-e0-hiF">
+                                                    <rect key="frame" x="274" y="1" width="140" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iao-Rm-6b2">
+                                                    <rect key="frame" x="30" y="7" width="42" height="88"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CyE-e0-hiF" firstAttribute="leading" secondItem="Iao-Rm-6b2" secondAttribute="trailing" constant="202" id="0hf-36-4AW"/>
+                                                <constraint firstAttribute="trailing" secondItem="CyE-e0-hiF" secondAttribute="trailing" id="7QN-OI-aaS"/>
+                                                <constraint firstItem="CyE-e0-hiF" firstAttribute="centerY" secondItem="Iao-Rm-6b2" secondAttribute="centerY" id="Dfh-hl-7vl"/>
+                                                <constraint firstItem="Iao-Rm-6b2" firstAttribute="leading" secondItem="kUn-zd-u9I" secondAttribute="leading" constant="30" id="edM-dy-2Fy"/>
+                                                <constraint firstItem="CyE-e0-hiF" firstAttribute="top" secondItem="kUn-zd-u9I" secondAttribute="topMargin" constant="-10" id="vYI-jb-kXm"/>
+                                                <constraint firstAttribute="bottom" secondItem="Iao-Rm-6b2" secondAttribute="bottom" constant="5" id="yJf-9M-1pG"/>
+                                                <constraint firstItem="Iao-Rm-6b2" firstAttribute="top" secondItem="kUn-zd-u9I" secondAttribute="top" constant="7" id="yUl-cX-m1i"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCoin" destination="CyE-e0-hiF" id="zpv-gL-o7N"/>
+                                            <outlet property="labelCoin" destination="Iao-Rm-6b2" id="VPb-U0-MvV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.16862745098039217" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="efN-LE-vKS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7F8-Zn-hUw"/>
                             <constraint firstItem="efN-LE-vKS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dsl-9l-tSy"/>
                             <constraint firstItem="efN-LE-vKS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZKI-xP-9Jn"/>
+                            <constraint firstItem="efN-LE-vKS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="jyH-rA-qxD"/>
                             <constraint firstItem="efN-LE-vKS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oRw-zm-PCg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="efN-LE-vKS" id="t6i-r3-fIC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
