@@ -8,11 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    @IBOutlet weak var labelCoin: UILabel!
+    @IBOutlet weak var imageCoin: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    var crypto = [Any]()
-
+    
+    struct crypto {
+       
+        let name: String
+        let symbol: String
+        let image: String
+    }
+    
+    var cryptoName: [String] = []
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,8 +42,7 @@ class ViewController: UIViewController {
                 if let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) {
                     if let data = json as? [[String: AnyObject]] {
                             for coin in data {
-                                print(coin["name"]!)
-                                self.crypto.append(coin)
+                                self.cryptoName.append(coin["name"]! as! String)
                                 DispatchQueue.main.async {
                                     self.tableView.reloadData()
                                 }
@@ -44,28 +56,23 @@ class ViewController: UIViewController {
         
     }
     
-    class coinTableView: UITableViewCell {
-        @IBOutlet weak var labelCoin: UILabel!
-        @IBOutlet weak var imageCoin: UIImageView!
-        
-    }
     
     // Number of Sections In Table
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     // Number of Rows in each Section
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return crypto.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cryptoName.count
     }
 
+    
     // Sets the content of each cell
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath as IndexPath)
-        cell.textLabel?.text = crypto[indexPath.row] as? String
+        cell.textLabel?.text = cryptoName[indexPath.row]
         return cell
 
     }

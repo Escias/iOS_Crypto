@@ -30,30 +30,23 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyE-e0-hiF">
                                                     <rect key="frame" x="274" y="1" width="140" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="IcI-3J-u0J"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iao-Rm-6b2">
-                                                    <rect key="frame" x="30" y="7" width="42" height="88"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CyE-e0-hiF" firstAttribute="leading" secondItem="Iao-Rm-6b2" secondAttribute="trailing" constant="202" id="0hf-36-4AW"/>
                                                 <constraint firstAttribute="trailing" secondItem="CyE-e0-hiF" secondAttribute="trailing" id="7QN-OI-aaS"/>
-                                                <constraint firstItem="CyE-e0-hiF" firstAttribute="centerY" secondItem="Iao-Rm-6b2" secondAttribute="centerY" id="Dfh-hl-7vl"/>
-                                                <constraint firstItem="Iao-Rm-6b2" firstAttribute="leading" secondItem="kUn-zd-u9I" secondAttribute="leading" constant="30" id="edM-dy-2Fy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CyE-e0-hiF" secondAttribute="bottom" constant="-12" id="oHd-uI-gmB"/>
                                                 <constraint firstItem="CyE-e0-hiF" firstAttribute="top" secondItem="kUn-zd-u9I" secondAttribute="topMargin" constant="-10" id="vYI-jb-kXm"/>
-                                                <constraint firstAttribute="bottom" secondItem="Iao-Rm-6b2" secondAttribute="bottom" constant="5" id="yJf-9M-1pG"/>
-                                                <constraint firstItem="Iao-Rm-6b2" firstAttribute="top" secondItem="kUn-zd-u9I" secondAttribute="top" constant="7" id="yUl-cX-m1i"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imageCoin" destination="CyE-e0-hiF" id="zpv-gL-o7N"/>
-                                            <outlet property="labelCoin" destination="Iao-Rm-6b2" id="VPb-U0-MvV"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="d3K-Li-F9w"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eHC-SA-KU9"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
