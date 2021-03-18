@@ -19,12 +19,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let name: String
         let symbol: String
         let image: String
+        
     }
     
     var cryptoName: [String] = []
+    var  cryptoImage: [String] = []
     
-    
-    
+    var coins = [crypto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) {
                     if let data = json as? [[String: AnyObject]] {
                             for coin in data {
-                                self.cryptoName.append(coin["name"]! as! String)
+                                self.coins.append(crypto(name: coin["name"] as! String,
+                                                         symbol: coin["symbol"] as! String,
+                                                         image: coin["image"] as! String))
+
+                                //self.cryptoName.append(coin["name"]! as! String)
+                                //self.cryptoImage.append(coin["image"] as! String)
                                 DispatchQueue.main.async {
                                     self.tableView.reloadData()
                                 }
@@ -64,15 +70,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // Number of Rows in each Section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cryptoName.count
+        return self.coins.count
     }
 
     
     // Sets the content of each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath as IndexPath)
-        cell.textLabel?.text = cryptoName[indexPath.row]
+        cell.textLabel?.text = self.coins[indexPath.row].name
+        
+       
+        
+        let url = URL(string: self.coins[indexPath.row].image)
+        let data = try? Data(contentsOf: url!)
+        cell.imageView?.image = UIImage(data: data!)
         return cell
 
     }
