@@ -90,8 +90,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "showdetail", sender: self)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        let url = URL(string: self.coins[indexPath.row].image)
+        let data = try? Data(contentsOf: url!)
+        vc?.image = UIImage(data: data!)!
+        vc?.name = self.coins[indexPath.row].name
+        vc?.id = self.coins[indexPath.row].id
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     

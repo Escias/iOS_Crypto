@@ -11,11 +11,19 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var TitleCrypto: UILabel!
-    
     @IBOutlet weak var cryptoDetailCell: UITableView!
+    @IBOutlet weak var imageCrypto: UIImageView!
+    @IBOutlet weak var nameCrypto: UILabel!
+    
+    var image = UIImage()
+    var name = ""
+    var id = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameCrypto.text = name
+        imageCrypto.image = image
+        print(id)
 
         let id = "bitcoin"
         let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(id)")!
@@ -39,6 +47,7 @@ class DetailViewController: UIViewController {
         }
         task.resume()
         
+
         
     }
         // Do any additional setup after loading the view.
