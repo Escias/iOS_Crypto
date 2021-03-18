@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let name: String
         let symbol: String
         let image: String
+        let id: String
         
     }
     
@@ -45,7 +46,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             for coin in data {
                                 self.coins.append(crypto(name: coin["name"] as! String,
                                                          symbol: coin["symbol"] as! String,
-                                                         image: coin["image"] as! String))
+                                                         image: coin["image"] as! String,
+                                                         id: coin["id"] as! String))
 
                                 //self.cryptoName.append(coin["name"]! as! String)
                                 //self.cryptoImage.append(coin["image"] as! String)
