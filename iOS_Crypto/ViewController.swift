@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Crypto Watcher"
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -82,20 +83,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath as IndexPath)
         cell.textLabel?.text = self.coins[indexPath.row].name
-        
-       
-        _ = UITapGestureRecognizer(target: self, action: #selector(self.tableViewLabelClick))
         let url = URL(string: self.coins[indexPath.row].image)
         let data = try? Data(contentsOf: url!)
         cell.imageView?.image = UIImage(data: data!)
         return cell
-
     }
-    @objc func tableViewLabelClick(sender : UITapGestureRecognizer){
-            var viewController: UIViewController = UIViewController()
-            viewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showdetail", sender: self)
     }
     
     
@@ -127,3 +123,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
 
+}
