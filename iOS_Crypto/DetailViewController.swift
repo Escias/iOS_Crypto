@@ -15,9 +15,31 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let id = "bitcoin"
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(id)")!
         
-        // Do any additional setup after loading the view.
+        let config = URLSessionConfiguration.default
+        let sessions = URLSession(configuration: config)
+       
+        let task = sessions.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                if let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) {
+                    if let data = json as? [[String: AnyObject]] {
+                            for coin in data {
+                            print(coin)
+                        } 
+                    }
+                }
+            }
+        }
+        task.resume()
+        
+        
     }
+        // Do any additional setup after loading the view.
+}
     
 
     /*
@@ -30,4 +52,4 @@ class DetailViewController: UIViewController {
     }
     */
 
-}
+
