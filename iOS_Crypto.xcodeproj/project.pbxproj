@@ -16,6 +16,7 @@
 		6E404A802600F69600178067 /* iOS_CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404A7F2600F69600178067 /* iOS_CryptoTests.swift */; };
 		6E404A8B2600F69600178067 /* iOS_CryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E404A8A2600F69600178067 /* iOS_CryptoUITests.swift */; };
 		6E404A992600F7B600178067 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6E404A982600F7B600178067 /* .gitignore */; };
+		A0D313AF260360F400A08401 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D313AE260360F400A08401 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6E404A8A2600F69600178067 /* iOS_CryptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_CryptoUITests.swift; sourceTree = "<group>"; };
 		6E404A8C2600F69600178067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E404A982600F7B600178067 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A0D313AE260360F400A08401 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				6E404A712600F69500178067 /* Assets.xcassets */,
 				6E404A732600F69500178067 /* LaunchScreen.storyboard */,
 				6E404A762600F69500178067 /* Info.plist */,
+				A0D313AE260360F400A08401 /* DetailViewController.swift */,
 			);
 			path = iOS_Crypto;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				6E404A6D2600F69400178067 /* ViewController.swift in Sources */,
 				6E404A692600F69400178067 /* AppDelegate.swift in Sources */,
 				6E404A6B2600F69400178067 /* SceneDelegate.swift in Sources */,
+				A0D313AF260360F400A08401 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

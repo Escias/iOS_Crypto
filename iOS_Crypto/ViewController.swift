@@ -30,6 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
         
         let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")!
@@ -82,13 +84,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = self.coins[indexPath.row].name
         
        
-        
+        _ = UITapGestureRecognizer(target: self, action: #selector(self.tableViewLabelClick))
         let url = URL(string: self.coins[indexPath.row].image)
         let data = try? Data(contentsOf: url!)
         cell.imageView?.image = UIImage(data: data!)
         return cell
 
     }
+    @objc func tableViewLabelClick(sender : UITapGestureRecognizer){
+            var viewController: UIViewController = UIViewController()
+            viewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
+    
+    
 
     
     
@@ -114,5 +125,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
  */
 
-}
+
 
