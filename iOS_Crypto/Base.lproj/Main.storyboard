@@ -59,7 +59,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Nes-Rg-N6g">
             <objects>
-                <viewController id="8pj-Km-cwI" customClass="DetailViewController" customModule="iOS_Crypto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="8pj-Km-cwI" customClass="DetailViewController" customModule="iOS_Crypto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jxb-no-Kz0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,11 +83,11 @@
                                         <rect key="frame" x="0.0" y="233" width="414" height="491"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HSN-5M-RIB">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="HSN-5M-RIB">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HSN-5M-RIB" id="QKh-t5-rzq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -121,6 +121,8 @@
                     <navigationItem key="navigationItem" id="d08-IW-ExP"/>
                     <connections>
                         <outlet property="TitleCrypto" destination="uXg-9Z-Wpr" id="8G3-4I-Qtd"/>
+                        <outlet property="imageCrypto" destination="dxU-OA-P2Z" id="BHd-tJ-Ojc"/>
+                        <outlet property="tableView" destination="5os-yR-tPO" id="bpS-mb-LvW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-O2-tk6" sceneMemberID="firstResponder"/>
