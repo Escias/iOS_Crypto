@@ -70,7 +70,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Nes-Rg-N6g">
             <objects>
-                <viewController id="8pj-Km-cwI" customClass="DetailViewController" customModule="iOS_Crypto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="8pj-Km-cwI" customClass="DetailViewController" customModule="iOS_Crypto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jxb-no-Kz0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,8 @@
                     <navigationItem key="navigationItem" id="d08-IW-ExP"/>
                     <connections>
                         <outlet property="TitleCrypto" destination="uXg-9Z-Wpr" id="8G3-4I-Qtd"/>
+                        <outlet property="imageCrypto" destination="YBy-5B-z1M" id="Pak-ln-3Sp"/>
+                        <outlet property="nameCrypto" destination="uXg-9Z-Wpr" id="u3e-Og-NsH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-O2-tk6" sceneMemberID="firstResponder"/>
