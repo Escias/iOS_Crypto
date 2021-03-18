@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var TitleCrypto: UILabel!
     
+    @IBOutlet weak var cryptoDetailCell: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,11 +27,12 @@ class DetailViewController: UIViewController {
             if error != nil {
                 print(error!.localizedDescription)
             } else {
+                
                 if let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) {
-                    if let data = json as? [[String: AnyObject]] {
-                            for coin in data {
-                            print(coin)
-                        } 
+                    if let data = json as? [String: AnyObject] {
+                        DispatchQueue.main.async{
+                            self.TitleCrypto.text = data["name"]! as? String
+                        }
                     }
                 }
             }
